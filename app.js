@@ -12,7 +12,7 @@ const app = express();
 
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
-const mongoDB = "";
+const mongoDB = "***";
 
 main().catch((err) => console.log(err));
 async function main() {

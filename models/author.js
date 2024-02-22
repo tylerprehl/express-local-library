@@ -46,6 +46,20 @@ AuthorSchema.virtual("date_of_death_formatted").get(function () {
   return "";
 });
 
+AuthorSchema.virtual("date_of_birth_iso").get(function () {
+  if (this.date_of_birth) {
+    return DateTime.fromJSDate(this.date_of_birth).toISODate();
+  }
+  return "";
+});
+
+AuthorSchema.virtual("date_of_death_iso").get(function () {
+  if (this.date_of_death) {
+    return DateTime.fromJSDate(this.date_of_death).toISODate();
+  }
+  return "";
+});
+
 function getNumberSuffix(num) {
   const th = "th";
   const rd = "rd";
