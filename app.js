@@ -17,13 +17,12 @@ const RateLimit = require("express-rate-limit");
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
   max: 30,
-})
+});
 
 // Set up connection to MongoDB
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB =
-  "***";
+const mongoDB = process.env.MONGODB_URI;
 
 main().catch((err) => console.log(err));
 async function main() {
@@ -42,8 +41,6 @@ app.use(
     },
   })
 );
-
-
 
 app.use(logger("dev"));
 app.use(express.json());
