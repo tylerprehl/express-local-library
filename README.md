@@ -1,5 +1,5 @@
 # Express - Local Library Tutorial
-The goal of this tutorial is to get an introduction to building web applications using Express. The hands-on-learning experience is provided through building a "Local Library" site, where users can view, add, update, and delete certain content within the Library, including books, authors, genres, and book availability.
+The goal of this tutorial is to get an introduction to building web applications using the Express web framework. The hands-on-learning experience is provided through building a "Local Library" site, where users can view, add, update, and delete certain content within the Library, including books, authors, genres, and book availability.
 
 Although the main goal is to get an introduction to Express, the Local Library tutorial includes oodles of other learning points, including (but certainly not limited to) using MongoDB (via Mongoose) within the middleware and using the templating language Pug (formerly known as Jade) for displaying variable content.
 
@@ -15,6 +15,12 @@ This section simply provides a list (with descriptions) of some of the more key/
   - HTML templating language
 - Luxon
   - Used as a Date-to-String formatter
+- Compression
+  - Used to compress response bodies for all requests that traverse through the middleware, reducing the time for the client to get and load the page
+- Helmet
+  - Protects against well-known web vulnerabilities with HTTP headers
+- Express Rate Limit
+  - Limits repeated requests to APIs and endpoints to safeguard against DOS attacks, brute force attacks, or even just clients or scripts not behaving as expected
 
 ### Other Interesting Things Learned
 - Better to compare against undefined with undefined as the first operand in Pug (ex - undefined === author, not author === undefined)

@@ -62,7 +62,6 @@ exports.book_detail = asyncHandler(async (req, res, next) => {
     book: book,
     book_instances: bookInstances,
   });
-  res.send(`NOT IMPLEMENTED: Book detail: ${req.params.id}`);
 });
 
 // Display book create form on GET.
