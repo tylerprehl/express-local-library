@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -17,7 +19,7 @@ const RateLimit = require("express-rate-limit");
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
   max: 30,
-});
+})
 
 // Set up connection to MongoDB
 const mongoose = require("mongoose");
@@ -41,6 +43,8 @@ app.use(
     },
   })
 );
+
+
 
 app.use(logger("dev"));
 app.use(express.json());
